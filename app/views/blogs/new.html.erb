@@ -1,0 +1,20 @@
+<h1>Blogs#new</h1>
+<p>Find me in app/views/blogs/new.html.erb</p>
+<%= form_with(model: @blog, local: true, url: confirm_blogs_path) do |form| %>
+    <% if @blog.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+            <ul>
+            <% @blog.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <%= form.label :title %>
+    <%= form.text_field :title %><br>
+    <%= form.label :content %>
+    <%= form.text_field :content %><br>
+    <%= form.submit "POST"%>
+<% end %>
+<%= link_to "see all blogs", blogs_path %>

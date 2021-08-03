@@ -1,0 +1,7 @@
+<%= form_with(model: @blog, local: true, url: blogs_path) do |form| %>
+    <%= form.hidden_field :title %><br>
+    <%= form.hidden_field :content %><br>
+    <p>Title:<%= @blog.title %></p>
+    <p>Content:<%= @blog.content %></p>
+    <%= form.submit "OK"%>
+<% end %>
